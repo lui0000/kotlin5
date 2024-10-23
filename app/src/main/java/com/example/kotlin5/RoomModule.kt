@@ -23,6 +23,6 @@ object RoomModule {
 
     @Provides
     fun provideRecipeDao(database: CommentDatabase): CommentDao {
-        return database.recipeDao()
+        return database.commentDao()
     }
 }

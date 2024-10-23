@@ -7,5 +7,5 @@ import androidx.room.TypeConverters
 @Database(entities = [Comment::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class CommentDatabase : RoomDatabase() {
-    abstract fun recipeDao(): CommentDao
+    abstract fun commentDao(): CommentDao
 }

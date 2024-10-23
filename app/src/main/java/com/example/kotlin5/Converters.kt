@@ -7,20 +7,6 @@ import java.lang.reflect.Type
 
 class Converters {
     @TypeConverter
-    fun fromStringList(value: List<String>?): String {
-        val gson = Gson()
-        val type: Type = object : TypeToken<List<String>>() {}.type
-        return gson.toJson(value, type)
-    }
-
-    @TypeConverter
-    fun toStringList(value: String): List<String>? {
-        val gson = Gson()
-        val type: Type = object : TypeToken<List<String>>() {}.type
-        return gson.fromJson(value, type)
-    }
-
-    @TypeConverter
     fun fromUser(user: User): String {
         return Gson().toJson(user)
     }
