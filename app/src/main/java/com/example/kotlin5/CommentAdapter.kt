@@ -1,5 +1,6 @@
 package com.example.kotlin5
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,10 +23,10 @@ class CommentAdapter(private var comments: List<Comment>) : RecyclerView.Adapter
         return comments.size
     }
 
-    // Добавляем метод для обновления комментариев
+
     fun updateComments(newComments: List<Comment>) {
         comments = newComments
-        notifyDataSetChanged() // Сообщаем адаптеру, что данные изменились
+        notifyDataSetChanged()
     }
 
     class CommentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -33,6 +34,7 @@ class CommentAdapter(private var comments: List<Comment>) : RecyclerView.Adapter
         private val commentUser: TextView = itemView.findViewById(R.id.commentUser)
         private val commentLikes: TextView = itemView.findViewById(R.id.commentLikes)
 
+        @SuppressLint("SetTextI18n")
         fun bind(comment: Comment) {
             commentBody.text = comment.body
             commentUser.text = "${comment.user.fullName} (@${comment.user.username})"
