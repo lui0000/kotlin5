@@ -2,17 +2,15 @@ package com.example.kotlin5
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Database
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.RoomDatabase
 
 @Dao
-interface RecipeDao {
+interface CommentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertRecipes(recipes: List<Recipe>)
+    suspend fun insertComments(comments: List<Comment>)
 
-    @Query("SELECT * FROM recipe")
-    fun getAllRecipes(): LiveData<List<Recipe>>
+    @Query("SELECT * FROM comment")
+    fun getAllComments(): LiveData<List<Comment>>
 }

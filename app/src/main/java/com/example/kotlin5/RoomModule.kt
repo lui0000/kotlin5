@@ -14,15 +14,15 @@ object RoomModule {
 
     @Provides
     @Singleton
-    fun providesRecipesDb(app: Application): RecipesDatabase{
+    fun providesRecipesDb(app: Application): CommentDatabase{
         return Room.databaseBuilder(
             app,
-            RecipesDatabase::class.java, "recipe-database"
+            CommentDatabase::class.java, "comments-database"
         ).build()
     }
 
     @Provides
-    fun provideRecipeDao(database: RecipesDatabase): RecipeDao {
+    fun provideRecipeDao(database: CommentDatabase): CommentDao {
         return database.recipeDao()
     }
 }

@@ -6,15 +6,25 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/recipeName"
+        android:id="@+id/commentBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold" />
-    <ImageView
+
+    <TextView
+        android:id="@+id/commentUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/recipeImage"/>
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/commentLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
 
 
 </LinearLayout>

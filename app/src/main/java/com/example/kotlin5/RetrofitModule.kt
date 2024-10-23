@@ -23,7 +23,7 @@ object RetrofitModule {
 
     @Provides
     @Singleton
-    fun providesRecipeApi(retrofit:Retrofit): RecipeApi {
-        return retrofit.create(RecipeApi::class.java)
+    fun providesRecipeApi(retrofit:Retrofit): CommentApi {
+        return retrofit.create(CommentApi::class.java)
     }
 }

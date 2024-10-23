@@ -11,9 +11,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: RecipeAdapter
+    private lateinit var adapter: CommentAdapter
 
-    private val recipeViewModel: RecipeViewModel by viewModels()
+    private val commentViewModel: CommentViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = RecipeAdapter(emptyList())
+        adapter = CommentAdapter(emptyList())
         recyclerView.adapter = adapter
 
-        recipeViewModel.recipes.observe(this) { recipes ->
-            adapter.updateRecipes(recipes)
+        commentViewModel.comments.observe(this) { comments ->
+            adapter.updateComments(comments)
         }
 
-        recipeViewModel.fetchRecipes()
+        commentViewModel.fetchComments()
     }
 }
